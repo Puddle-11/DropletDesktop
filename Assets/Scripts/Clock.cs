@@ -11,7 +11,7 @@ public class Clock : MonoBehaviour
         int minute = DateTime.Now.Minute;
         bool AM = hour < 12;
 
-        text.text = hour.ToString() + ":" + (minute >= 10 ? minute.ToString() : "0" + minute.ToString()) + (AM ? "AM" : "PM");
+        text.text = (hour%12).ToString() + ":" + (minute >= 10 ? minute.ToString() : "0" + minute.ToString()) + (AM ? "AM" : "PM");
     }
    
 }

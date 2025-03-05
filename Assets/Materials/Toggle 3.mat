@@ -63,7 +63,7 @@ Material:
     - _Offset2: 0
     - _Offset3: -0.01
     - _OffsetChangeSpeed: 0.1
-    - _OutlineWidth: 0.05
+    - _OutlineWidth: 0.035
     - _TimeOffset: 16.43
     - _scale: 0.3
     - _speed: 0.3

@@ -5,8 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
+using System.IO;
 
-public class TransparentWindow : MonoBehaviour {
+public class TransparentWindow : MonoBehaviour
+{
 
     [DllImport("user32.dll")]
     public static extern int MessageBox(IntPtr hWnd, string text, string caption, uint type);
@@ -23,7 +25,8 @@ public class TransparentWindow : MonoBehaviour {
     [DllImport("user32.dll")]
     static extern int SetLayeredWindowAttributes(IntPtr hwnd, uint crKey, byte bAlpha, uint dwFlags);
 
-    private struct MARGINS {
+    private struct MARGINS
+    {
         public int cxLeftWidth;
         public int cxRightWidth;
         public int cyTopHeight;
@@ -46,10 +49,11 @@ public class TransparentWindow : MonoBehaviour {
     const uint SWP_NOSIZE = 0x0001;
     const uint SWP_NOZORDER = 0x0004;
     private IntPtr hWnd;
-
-    private void Start() {
+    private void Start()
+    {
         //MessageBox(new IntPtr(0), "Hello World!", "Hello Dialog", 0);
-        PlayerPrefs.SetInt("UnitySelectMonitor", 2);
+
+        PlayerPrefs.SetInt("UnitySelectMonitor", 0);
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 
@@ -63,11 +67,13 @@ public class TransparentWindow : MonoBehaviour {
         Application.runInBackground = true;
     }
 
-    private void Update() {
+    private void Update()
+    {
         SetClickthrough(Physics2D.OverlapPoint(GetMouseWorldPosition()) == null);
     }
 
-    private void SetClickthrough(bool clickthrough) {
+    private void SetClickthrough(bool clickthrough)
+    {
 #if !UNITY_EDITOR
         if (clickthrough) {
             SetWindowLong(hWnd, GWL_EXSTYLE, WS_EX_LAYERED | WS_EX_TRANSPARENT);
@@ -80,6 +86,27 @@ public class TransparentWindow : MonoBehaviour {
     {
         return (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
+    public static void ReloadApplication()
+    {
+        UnityEngine.Debug.LogError("Reloaded");
+        string appPath = GetAppPath();
 
-  
+        Process.Start(appPath);
+        Application.Quit();
+
+    }
+    public static void QuitApplication()
+    {
+        Application.Quit();
+    }
+    public static string GetAppPath()
+    {
+        string appDir = Directory.GetParent(Application.dataPath)?.FullName; // Get the root folder (MyApp)
+
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            return Path.Combine(appDir, "Droplet Desktop.exe"); // Ensure this matches your app's exe name
+        }
+        return null;
+    }
 }

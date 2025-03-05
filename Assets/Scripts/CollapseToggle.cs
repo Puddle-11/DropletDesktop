@@ -12,6 +12,26 @@ public class CollapseToggle : Toggle
     private bool running;
     Coroutine currEnum;
     private bool savedState;
+
+
+
+    public void SetLerpTime(float _val)
+    {
+        lerpTime = _val;
+    }
+    public void SetToggleObject(Toggle _val)
+    {
+        toggleObject = _val;
+    }
+    public void SetOpenPosition(Vector3 _val)
+    {
+        open = _val;
+    }
+    public void SetLerpCurve(AnimationCurve _val)
+    {
+        lerpCurve = _val;
+    }
+
     private void Update()
     {
         if (internalState != toggleObject.enabled)
