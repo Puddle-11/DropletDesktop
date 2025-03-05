@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlaySpotify_0: -5260009526213658078
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
