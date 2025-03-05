@@ -4,21 +4,21 @@ using System.Collections;
 using System.IO;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-
+using System.Text.Json;
 public class DBManager : MonoBehaviour
 {
 
 
     private void Start()
     {
-        StartCoroutine(GetMessageAtRandomIndex());
+        UnityEngine.Debug.Log(GetMessageAtIndexAsync("./Messages.json",  0));
     }
 
     static string GetMessageAtIndexAsync(string filePath, int targetIndex)
     {
           FileStream fs = File.OpenRead(filePath);
          StreamReader sr = new StreamReader(fs);
-         JsonDocument doc = JsonDocument.ParseAsync(fs);
+         JsonDocument doc = JsonDocument.Parse(fs);
 
         int currentIndex = -1;
 
