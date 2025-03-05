@@ -18,10 +18,9 @@ public class ScreenAnchor : MonoBehaviour
         BRCorner,
         BLCorner
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        transform.position = GetAnchorPosition(anchor) + position;
+        transform.localPosition = GetAnchorPosition(anchor) + position;
     }
 
   

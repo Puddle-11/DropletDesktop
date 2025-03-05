@@ -6,8 +6,8 @@ public class Sidebar : MonoBehaviour
     [SerializeField] private Toggle toggleButton;
     private bool internalState;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private Vector2 targetPosition; 
-  
+    [SerializeField] private Vector2 targetPosition;
+    [SerializeField] private float targetX;
     void Update()
     {
         if(internalState != toggleButton.enabled)
@@ -21,13 +21,12 @@ public class Sidebar : MonoBehaviour
     {
         if (internalState)
         {
-            targetPosition = new Vector2(ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.RightEdge).x - transform.localScale.x / 2 + 0.1f, 0);
+            targetPosition = new Vector2(ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.RightEdge).x - targetX + 0.1f, 0);
         }
         else
         {
             targetPosition = new Vector2(ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.RightEdge).x + transform.localScale.x, 0);
         }
-
-
     }
+    
 }

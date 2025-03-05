@@ -1,20 +1,10 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
+﻿
 using System;
 using System.Runtime.InteropServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class TransparentWindow : MonoBehaviour {
 
@@ -59,7 +49,7 @@ public class TransparentWindow : MonoBehaviour {
 
     private void Start() {
         //MessageBox(new IntPtr(0), "Hello World!", "Hello Dialog", 0);
-        PlayerPrefs.SetInt("UnitySelectMonitor", 1);
+        PlayerPrefs.SetInt("UnitySelectMonitor", 2);
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 
@@ -85,10 +75,11 @@ public class TransparentWindow : MonoBehaviour {
             SetWindowLong(hWnd, GWL_EXSTYLE, WS_EX_LAYERED);
         }
 #endif
-        Debug.Log(clickthrough);
     }
     public static Vector2 GetMouseWorldPosition()
     {
         return (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
+
+  
 }
