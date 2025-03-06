@@ -59,11 +59,13 @@ Material:
     - _Background_Scale: 0.1
     - _Dir2: 0
     - _Div: 7
+    - _MouseInfluence: 0
+    - _MouseInfluenceFalloff: 4
     - _Offset1: 0.01
     - _Offset2: 0
     - _Offset3: -0.01
     - _OffsetChangeSpeed: 0.1
-    - _OutlineWidth: 0.05
+    - _OutlineWidth: 0.035
     - _TimeOffset: 16.43
     - _scale: 0.3
     - _speed: 0.3
@@ -76,6 +78,7 @@ Material:
     - _Color_2: {r: 0.50980395, g: 1, b: 0, a: 0}
     - _Dir1: {r: -0.5, g: 1, b: 0, a: 0}
     - _Dir2: {r: 0.5, g: -1, b: 0, a: 0}
+    - _MousePos: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetMultiplierRange: {r: -8, g: 8, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Overlap12: {r: 0.96470594, g: 0.6862745, b: 0.2901961, a: 0}

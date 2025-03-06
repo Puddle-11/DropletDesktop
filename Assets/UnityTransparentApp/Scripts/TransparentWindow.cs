@@ -88,16 +88,23 @@ public class TransparentWindow : MonoBehaviour
     }
     public static void ReloadApplication()
     {
-        UnityEngine.Debug.LogError("Reloaded");
         string appPath = GetAppPath();
 
         Process.Start(appPath);
-        Application.Quit();
+        QuitApplication();
 
     }
     public static void QuitApplication()
     {
         Application.Quit();
+    }
+    public static void UpdateCurrentWindow(int _newVal)
+    {
+       
+            PlayerPrefs.SetInt("UnitySelectMonitor", _newVal);
+            ReloadApplication();
+        
+
     }
     public static string GetAppPath()
     {

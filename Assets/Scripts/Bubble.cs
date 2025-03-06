@@ -7,13 +7,19 @@ public class Bubble : MonoBehaviour
     private bool internalState;
     [SerializeField] private AnimationCurve lerpCurve;
     private float LastY;
+    [SerializeField] private bool manualTargetY;
     public float TargetY;
     private bool running;
     Coroutine currEnum;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        TargetY = ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.TopEdge).y + transform.localScale.y/2;
+        if(!manualTargetY)  TargetY = ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.TopEdge).y + transform.localScale.y/2;
+        else
+        {
+            TargetY += ScreenAnchor.GetAnchorPosition(ScreenAnchor.AnchorDir.TopEdge).y;
+        }
         currEnum = StartCoroutine(LerpPosition(lerpTime, new Vector3(transform.position.x, TargetY, transform.position.z), transform.position));
     }
 

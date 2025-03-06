@@ -5,8 +5,9 @@ public class DisplayToggle : MonoBehaviour, Clickable
     public int coroDisplay;
     public void Click()
     {
-        PlayerPrefs.SetInt("UnitySelectMonitor", coroDisplay);
-        TransparentWindow.ReloadApplication();
+
+        TransparentWindow.UpdateCurrentWindow(coroDisplay);
+
     }
 
     public int GetOrder()

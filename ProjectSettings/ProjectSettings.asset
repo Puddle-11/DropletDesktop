@@ -140,7 +140,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.0.3
+  bundleVersion: 0.1.1
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   metroInputSource: 0
@@ -287,7 +287,49 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: a6294eed755fead4ea2a46e60e25bcb9, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: d1735d894f65a7a4e823c03b330b333e, type: 3}
+      m_Width: 512
+      m_Height: 512
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 9cc8c90385d8621419bf6db770a8d220, type: 3}
+      m_Width: 256
+      m_Height: 256
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: a7c453c524b6c774994ea3187241fb82, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: ccc67729af034504e85a699e7fcc6c67, type: 3}
+      m_Width: 64
+      m_Height: 64
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 2608751acc171c24382dbae7649c7e93, type: 3}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: c649f6c7db1ba234fbfbc90060245196, type: 3}
+      m_Width: 32
+      m_Height: 32
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b564b0a67a80f6b428156d6aad4f077c, type: 3}
+      m_Width: 16
+      m_Height: 16
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
