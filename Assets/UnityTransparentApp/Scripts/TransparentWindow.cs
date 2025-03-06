@@ -53,7 +53,6 @@ public class TransparentWindow : MonoBehaviour
     {
         //MessageBox(new IntPtr(0), "Hello World!", "Hello Dialog", 0);
 
-        PlayerPrefs.SetInt("UnitySelectMonitor", 0);
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 
@@ -103,8 +102,6 @@ public class TransparentWindow : MonoBehaviour
        
             PlayerPrefs.SetInt("UnitySelectMonitor", _newVal);
             ReloadApplication();
-        
-
     }
     public static string GetAppPath()
     {
