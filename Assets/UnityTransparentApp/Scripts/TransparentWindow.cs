@@ -49,9 +49,9 @@ public class TransparentWindow : MonoBehaviour
     const uint SWP_NOSIZE = 0x0001;
     const uint SWP_NOZORDER = 0x0004;
     private IntPtr hWnd;
+
     private void Start()
     {
-        //MessageBox(new IntPtr(0), "Hello World!", "Hello Dialog", 0);
 
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
@@ -68,6 +68,7 @@ public class TransparentWindow : MonoBehaviour
 
     private void Update()
     {
+
         SetClickthrough(Physics2D.OverlapPoint(GetMouseWorldPosition()) == null);
     }
 
